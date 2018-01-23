@@ -15,8 +15,9 @@ class App extends Component {
           <main>
             <Switch>
               <Route exact path="/" render={() => (<Index />)}/>
-              <Route exact path="/people" render={() => (<PeopleContainer />) } />
-              <Route path="/people/:name" render={() => (<PersonDetail />)}/>
+              <Route exact path="/people" render={(props) => (<PeopleContainer {...props}/>) } />
+              <Route path="/people/:name" render={(props) => (<PersonDetail {...props}/>)}
+              />
             </Switch>
           </main>
         <Footer />

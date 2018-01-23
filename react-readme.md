@@ -19,11 +19,11 @@ $ git checkout -b <your-branch-here>
 ### React app requirements
 
 - [X] A React app is present
-- [ ] React app has at least two components.
-- [ ] React repo is organized and files are semantically named
-- [ ] React app makes API calls to the back-end application in `componentDidMount()`
-- [ ] CSS styling is present
-- [ ] React app has create and read functionality on at least one model
+- [X] React app has at least two components.
+- [X] React repo is organized and files are semantically named
+- [X] React app makes API calls to the back-end application in `componentDidMount()`
+- [X] CSS styling is present
+- [/] React app has create and read functionality on at least one model
 
 ### Express app requirements
 

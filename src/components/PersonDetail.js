@@ -6,8 +6,11 @@ class PersonDetail extends Component {
   // handler methods
   // state props to hold input
   render() {
+    console.log(this.props)
     return (
-      <div>Hello from person detail</div>
+      <div>
+      {this.props.location.state.person.name}
+      </div>
     )
   }
 }
