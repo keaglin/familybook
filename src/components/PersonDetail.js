@@ -16,6 +16,7 @@ class PersonDetail extends Component {
   }
   render() {
     let person = this.state.person
+    console.log('this.state.person is', this.state.person)
     if (this.state.toDashboard) return <Redirect to='/people' />
     return (
       <div>
@@ -23,11 +24,13 @@ class PersonDetail extends Component {
           <h1 className="center">{person.name}</h1>
           <div>
             {/* <img className='img-person'  src={person.imageUrl} alt="person-cover" /> */}
-            <p>Written by: {person.author}</p>
-            <p>Published: {person.published}</p>
-            <p>Quality (out of 5): {person.quality}</p>
-            <p>Favorite Quote: {person.quote}</p>
-            <p>Owner: {person.owner}</p>
+            <p>Born: {person.birthDate}</p>
+            <p>Died: {person.deathDate}</p>
+            <p>Partner: {person.spouse}</p>
+            <p>Location: {person.location}</p>
+            <p>Occupation: {person.occupation}</p>
+            <h5>About</h5>
+            <p>{person.story}</p>
             
             <button>
               <Link to={{

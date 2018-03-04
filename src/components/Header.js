@@ -4,7 +4,6 @@ import {Row, Col } from 'react-materialize'
 
 const Header = () => {
   return(
-    <Row>
       <header>
         <nav>
           <div className="nav-wrapper green darken-1">
@@ -17,7 +16,6 @@ const Header = () => {
           </div>
         </nav>
       </header>
-    </Row>
   )
 }
 

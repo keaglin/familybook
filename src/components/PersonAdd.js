@@ -38,8 +38,8 @@ class PersonAdd extends Component {
 
   render() {
     let person = this.state.person
-    console.log('person is', person)
-    if (this.state.toDashboard === true) {
+    // console.log('person is', person)
+    if (this.state.toDashboard) {
       return <Redirect to={{
         pathname: `/people/${person.title}`,
         state: {person:person}
