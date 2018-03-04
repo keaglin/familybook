@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { CLIENT_URL }       from '../constants'
 import { Link, Redirect }   from 'react-router-dom'
 import axios                from 'axios'
-import '../css/PersonDetails.css'
 
 
 class PersonDetail extends Component {
@@ -11,7 +10,7 @@ class PersonDetail extends Component {
     toDashboard: false
   }
   handleDelete = () => {
-    axios.delete(`${CLIENT_URL}/people/${this.state.person.title}`)
+    axios.delete(`${CLIENT_URL}/people/${this.state.person.name}`)
     .then(this.setState({ toDashboard: true }))
     .catch(err => console.log(err))
   }
@@ -21,7 +20,7 @@ class PersonDetail extends Component {
     return (
       <div>
         <div>
-          <h1>{person.name}</h1>
+          <h1 className="center">{person.name}</h1>
           <div>
             <img className='img-person'  src={person.imageUrl} alt="person-cover" />
             <p>Written by: {person.author}</p>
