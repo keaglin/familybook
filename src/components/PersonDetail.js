@@ -22,7 +22,7 @@ class PersonDetail extends Component {
         <div>
           <h1 className="center">{person.name}</h1>
           <div>
-            <img className='img-person'  src={person.imageUrl} alt="person-cover" />
+            {/* <img className='img-person'  src={person.imageUrl} alt="person-cover" /> */}
             <p>Written by: {person.author}</p>
             <p>Published: {person.published}</p>
             <p>Quality (out of 5): {person.quality}</p>
