@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 class PeopleList extends Component {
 
@@ -9,7 +10,14 @@ class PeopleList extends Component {
       <div>
         {
           people.map((person, index) => {
-            return <li key={index}><a href={'/people/' + person.name}>{person.name}</a></li>
+            return (<li key={index}>
+              <Link to = {{
+                pathname: `/people/${person.name}`, 
+                state: {person:person}
+              }}>
+                {person.name}
+              </Link>
+            </li>)
           })
         }
       </div>
