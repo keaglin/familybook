@@ -3,7 +3,7 @@ import axios                from 'axios'
 import { CLIENT_URL }       from '../constants'
 // import '../css/ItemEdit.css'
 import { Redirect }           from 'react-router-dom'
-import Col from 'react-materialize'
+// import Col from 'react-materialize'
 
 class PersonEdit extends Component {
   state = {
@@ -11,10 +11,32 @@ class PersonEdit extends Component {
     toDashboard: false
   }
 
-  handleSubmit = () => {
-    axios.put(`${CLIENT_URL}/people/${this.state.person.title}`, {person: this.state.person})
-      .then(this.setState({ toDashboard: true }))
+  // handleInput = (e) => {
+  //   console.log(e.target)
+  //   // if (e.target.value) this.setState({person: Object.assign(this.state.person, {name: e.target.value})})
+  // }
+
+  handleSubmit = (e) => {
+    e.preventDefault()
+    const person = new FormData(e.target)
+    // console.log(person)
+    console.log(typeof(person.get('name')))
+    axios({
+      method: 'put',
+      url: `${CLIENT_URL}/${this.state.person.name}`,
+      data: {
+        name: person.get('name'),
+        birthDate: person.get('birthDate'),
+        deathDate: person.get('deathDate'),
+        spouse: person.get('spouse'),
+        location: person.get('location'),
+        occupation: person.get('occupation'),
+        story: person.get('story')
+      }
+    })
+    //   .then(this.setState({ toDashboard: true }))
       .catch(err => console.log('Woops!', err))
+    // axios.put(`${CLIENT_URL}/people/${this.state.person.name}`, data)
   }
 
   render() {
@@ -35,34 +57,34 @@ class PersonEdit extends Component {
             <form className="col s12" onSubmit={this.handleSubmit}>
               <div className="row">
                 <div className="input-field col s6">
-                  <input id="name" name="name" type="text" placeholder={person.name} />
-                  <label htmlFor="name">Name</label>
+                  <input id="name" name="name" type="text" defaultValue={person.name} />
+                  <label className={person.name && "active"} htmlFor="name">Name</label>
                 </div>
                 <div className="input-field col s6">
-                  <input id="spouse" name="spouse" type="text" placeholder={person.spouse} />
-                  <label htmlFor="spouse">Spouse/Partner</label>
+                  <input id="spouse" name="spouse" type="text" defaultValue={person.spouse} />
+                  <label className={person.spouse && "active"} htmlFor="spouse">Spouse/Partner</label>
                 </div>
                 <div className="input-field col s6">
-                  <input id="birthDate" name="birthDate" type="text" placeholder={person.birthDate} />
-                  <label htmlFor="birthDate">Birthdate</label>
+                  <input id="birthDate" name="birthDate" type="text" defaultValue={person.birthDate} />
+                  <label className={person.birthDate && "active"} htmlFor="birthDate">Birthdate</label>
                 </div>
                 <div className="input-field col s6">
-                  <input id="deathDate" name="deathDate" type="text" placeholder={person.deathDate} />
-                  <label htmlFor="deathDate">Died</label>
+                  <input id="deathDate" name="deathDate" type="text" defaultValue={person.deathDate} />
+                  <label className={person.deathDate && "active"} htmlFor="deathDate">Died</label>
                 </div>
                 <div className="input-field col s6">
-                  <input id="locaiton" name="location" type="text" placeholder={person.location} />
-                  <label htmlFor="location">Location</label>
+                  <input id="locaiton" name="location" type="text" defaultValue={person.location} />
+                  <label className={person.location && "active"} htmlFor="location">Location</label>
                 </div>
                 <div className="input-field col s6">
                 {/* <Col class="input-field" s={6}> */}
-                  <input id="occupation" name="occupation" type="text" placeholder={person.occupation} />
-                  <label htmlFor="occupation">Occupation</label>
+                  <input id="occupation" name="occupation" type="text" defaultValue={person.occupation} />
+                  <label className={person.occupation && "active"} htmlFor="occupation">Occupation</label>
                 {/* </Col> */}
                 </div>
                 <div className="input-field col s12">
-                  <textarea className="materialize-textarea" id="story" name="story" type="text" placeholder={person.story}></textarea>
-                  <label htmlFor="story">About</label>
+                  <textarea className="materialize-textarea" id="story" name="story" type="text" defaultValue={person.story}></textarea>
+                  <label className={person.story && "active"} htmlFor="story">About</label>
                 </div>
               </div>
               <div className="center">
