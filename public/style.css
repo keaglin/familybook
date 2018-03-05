@@ -7,6 +7,14 @@
 footer {
   position: fixed;
   bottom: 0;
+  margin-bottom: 0 !important;
   min-width: 100vw;
   text-align: center;
+  color: white;
+  background-color: black;
+  min-height: 50px;
+}
+
+.footer-content {
+  margin-top: 15px;
 }

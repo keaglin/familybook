@@ -19,10 +19,10 @@ class PersonDetail extends Component {
     console.log('this.state.person is', this.state.person)
     if (this.state.toDashboard) return <Redirect to='/people' />
     return (
-      <div>
-        <div>
+      <div className="row">
+        <div className="col s12">
           <h1 className="center">{person.name}</h1>
-          <div>
+          <div className="row">
             {/* <img className='img-person'  src={person.imageUrl} alt="person-cover" /> */}
             <p>Born: {person.birthDate}</p>
             <p>Died: {person.deathDate}</p>

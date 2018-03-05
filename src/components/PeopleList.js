@@ -5,7 +5,7 @@ const PeopleList = (props) => {
   let people = props.people
   console.log('people is ', people)
   return(
-    <div className="containter">
+    <div className="container">
       <ul>
         {
           people.map((person, index) => {
@@ -21,7 +21,7 @@ const PeopleList = (props) => {
         }
       </ul>
       <div>
-        <button className="btn white">
+        <button className="btn white center">
           <Link to ='/people/add'>Add</Link>
         </button>
       </div>
