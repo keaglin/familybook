@@ -32,7 +32,7 @@ class PersonDetail extends Component {
             <h5>About</h5>
             <p>{person.story}</p>
             
-            <button>
+            <button className="btn white">
               <Link to={{
                 pathname: `/people/${person.name}/edit`,
                 state: {person: person}
@@ -40,7 +40,10 @@ class PersonDetail extends Component {
                 Edit
               </Link>
             </button>
-            <button onClick={this.handleDelete}>
+            <button 
+              className="btn white"
+              onClick={this.handleDelete}
+            >
               <Link to={{
                 pathname: `/people/${person.name}`,
                 state: {person: person}

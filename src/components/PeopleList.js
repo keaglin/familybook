@@ -21,7 +21,7 @@ const PeopleList = (props) => {
         }
       </ul>
       <div>
-        <button>
+        <button className="btn white">
           <Link to ='/people/add'>Add</Link>
         </button>
       </div>
