@@ -5,7 +5,7 @@ const PeopleList = (props) => {
   let people = props.people
   console.log('people is ', people)
   return(
-    <div>
+    <div className="containter">
       <ul>
         {
           people.map((person, index) => {

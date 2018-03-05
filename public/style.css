@@ -3,3 +3,10 @@
   flex-direction: column;
   justify-content: space-between;
 }
+
+footer {
+  position: fixed;
+  bottom: 0;
+  min-width: 100vw;
+  text-align: center;
+}
