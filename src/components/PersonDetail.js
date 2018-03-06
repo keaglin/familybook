@@ -3,7 +3,6 @@ import { CLIENT_URL }       from '../constants'
 import { Link, Redirect }   from 'react-router-dom'
 import axios                from 'axios'
 
-
 class PersonDetail extends Component {
   state = {
     person: this.props.location.state.person,
