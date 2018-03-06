@@ -1,7 +1,7 @@
-# WDI20 Project 2
-**UPDATED TO AN API (Node server) AND A REACT APP (bootstrapped with create-react-app)**  
-### Johnson and Jones Family Book
-An application that aggregates and displays family and ancestry data.
+# Johnson and Jones Family Book  
+An application that aggregates and displays family and ancestry data.  
+
+_UPDATED TO AN API (Node server) AND A REACT APP (bootstrapped with create-react-app)_   
 
 ## Project Status
 This project is still being actively developed. 
