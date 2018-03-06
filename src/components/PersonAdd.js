@@ -10,28 +10,31 @@ class PersonAdd extends Component {
     toDashboard: false
   }
 
-  // handleTitle = (e) => {
-  //   if (e.target.value) this.setState({person: Object.assign(this.state.person, {title: e.target.value})})
-  // }
-  // handleAuthor = (e) => {
-  //   if (e.target.value) this.setState({person: Object.assign(this.state.person, {author: e.target.value})})
-  // }
-  // handleQuality = (e) => {
-  //   if (e.target.value) this.setState({person: Object.assign(this.state.person, {quality: e.target.value})})
-  // }
-  // handleQuote = (e) => {
-  //   if (e.target.value) this.setState({person: Object.assign(this.state.person, {quote: e.target.value})})
-  // }
-  // handleOwner = (e) => {
-  //   if (e.target.value) this.setState({person: Object.assign(this.state.person, {owner: e.target.value})})
-  // }
-  // handleImage = (e) => {
-  //   if (e.target.value) this.setState({person: Object.assign(this.state.person, {imageUrl: e.target.value})})
-  // }
+  handleName = (e) => {
+    if (e.target.value) this.setState({person: Object.assign(this.state.person, {name: e.target.value})})
+  }
+  handleSpouse = (e) => {
+    if (e.target.value) this.setState({person: Object.assign(this.state.person, {spouse: e.target.value})})
+  }
+  handleBirthDate = (e) => {
+    if (e.target.value) this.setState({person: Object.assign(this.state.person, {birthDate: e.target.value})})
+  }
+  handleDeathDate = (e) => {
+    if (e.target.value) this.setState({person: Object.assign(this.state.person, {deathDate: e.target.value})})
+  }
+  handleLocation = (e) => {
+    if (e.target.value) this.setState({person: Object.assign(this.state.person, {location: e.target.value})})
+  }
+  handleOccupation = (e) => {
+    if (e.target.value) this.setState({person: Object.assign(this.state.person, {occupation: e.target.value})})
+  }
+  handleStory = (e) => {
+    if (e.target.value) this.setState({person: Object.assign(this.state.person, {story: e.target.value})})
+  }
 
   handleSubmit = (e) => {
     e.preventDefault()
-    axios.put(`${CLIENT_URL}/${this.state.person.name}`, {person: this.state.person})
+    axios.post(`${CLIENT_URL}`, {person: this.state.person})
       .then(this.setState({ toDashboard: true }))
       .catch(err => console.log('Woops!', err))
   }
