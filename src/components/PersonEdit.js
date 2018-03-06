@@ -11,32 +11,54 @@ class PersonEdit extends Component {
     toDashboard: false
   }
 
-  // handleInput = (e) => {
-  //   console.log(e.target)
-  //   // if (e.target.value) this.setState({person: Object.assign(this.state.person, {name: e.target.value})})
-  // }
+  handleName = (e) => {
+    if (e.target.value) this.setState({person: Object.assign(this.state.person, {name: e.target.value})})
+  }
+  handleSpouse = (e) => {
+    if (e.target.value) this.setState({person: Object.assign(this.state.person, {spouse: e.target.value})})
+  }
+  handleBirthDate = (e) => {
+    if (e.target.value) this.setState({person: Object.assign(this.state.person, {birthDate: e.target.value})})
+  }
+  handleDeathDate = (e) => {
+    if (e.target.value) this.setState({person: Object.assign(this.state.person, {deathDate: e.target.value})})
+  }
+  handleLocation = (e) => {
+    if (e.target.value) this.setState({person: Object.assign(this.state.person, {location: e.target.value})})
+  }
+  handleOccupation = (e) => {
+    if (e.target.value) this.setState({person: Object.assign(this.state.person, {occupation: e.target.value})})
+  }
+  handleStory = (e) => {
+    if (e.target.value) this.setState({person: Object.assign(this.state.person, {story: e.target.value})})
+  }
 
   handleSubmit = (e) => {
     e.preventDefault()
-    const person = new FormData(e.target)
+    // This approach did not work. But why?
+    // const formData = new FormData(e.target)
     // console.log(person)
-    console.log(typeof(person.get('name')))
-    axios({
-      method: 'put',
-      url: `${CLIENT_URL}/${this.state.person.name}`,
-      data: {
-        name: person.get('name'),
-        birthDate: person.get('birthDate'),
-        deathDate: person.get('deathDate'),
-        spouse: person.get('spouse'),
-        location: person.get('location'),
-        occupation: person.get('occupation'),
-        story: person.get('story')
-      }
-    })
+    // console.log(typeof(person.get('name')))
+    // axios({
+    //   method: 'put',
+    //   url: `${CLIENT_URL}/${this.state.person.name}`,
+    //   data: {
+    //     name: formData.get('name'),
+    //     birthDate: formData.get('birthDate'),
+    //     deathDate: formData.get('deathDate'),
+    //     spouse: formData.get('spouse'),
+    //     location: formData.get('location'),
+    //     occupation: formData.get('occupation'),
+    //     story: formData.get('story')
+    //   }
+    // })
     //   .then(this.setState({ toDashboard: true }))
+    //   .catch(err => console.log('Woops!', err))
+
+
+    axios.put(`${CLIENT_URL}/${this.state.person.name}`, {person: this.state.person})
+      .then(this.setState({ toDashboard: true }))
       .catch(err => console.log('Woops!', err))
-    // axios.put(`${CLIENT_URL}/people/${this.state.person.name}`, data)
   }
 
   render() {
@@ -57,33 +79,33 @@ class PersonEdit extends Component {
             <form className="col s12" onSubmit={this.handleSubmit}>
               <div className="row">
                 <div className="input-field col s6">
-                  <input id="name" name="name" type="text" defaultValue={person.name} />
+                  <input id="name" name="name" type="text" defaultValue={person.name} onChange={this.handleName} />
                   <label className={person.name && "active"} htmlFor="name">Name</label>
                 </div>
                 <div className="input-field col s6">
-                  <input id="spouse" name="spouse" type="text" defaultValue={person.spouse} />
+                  <input id="spouse" name="spouse" type="text" defaultValue={person.spouse} onChange={this.handleSpouse} />
                   <label className={person.spouse && "active"} htmlFor="spouse">Spouse/Partner</label>
                 </div>
                 <div className="input-field col s6">
-                  <input id="birthDate" name="birthDate" type="text" defaultValue={person.birthDate} />
+                  <input id="birthDate" name="birthDate" type="text" defaultValue={person.birthDate} onChange={this.handleBirthDate} />
                   <label className={person.birthDate && "active"} htmlFor="birthDate">Birthdate</label>
                 </div>
                 <div className="input-field col s6">
-                  <input id="deathDate" name="deathDate" type="text" defaultValue={person.deathDate} />
+                  <input id="deathDate" name="deathDate" type="text" defaultValue={person.deathDate} onChange={this.handleDeathDate} />
                   <label className={person.deathDate && "active"} htmlFor="deathDate">Died</label>
                 </div>
                 <div className="input-field col s6">
-                  <input id="locaiton" name="location" type="text" defaultValue={person.location} />
+                  <input id="locaiton" name="location" type="text" defaultValue={person.location} onChange={this.handleLocation} />
                   <label className={person.location && "active"} htmlFor="location">Location</label>
                 </div>
                 <div className="input-field col s6">
                 {/* <Col class="input-field" s={6}> */}
-                  <input id="occupation" name="occupation" type="text" defaultValue={person.occupation} />
+                  <input id="occupation" name="occupation" type="text" defaultValue={person.occupation} onChange={this.handleOccupation} />
                   <label className={person.occupation && "active"} htmlFor="occupation">Occupation</label>
                 {/* </Col> */}
                 </div>
                 <div className="input-field col s12">
-                  <textarea className="materialize-textarea" id="story" name="story" type="text" defaultValue={person.story}></textarea>
+                  <textarea className="materialize-textarea" id="story" name="story" type="text" defaultValue={person.story} onChange={this.handleStory}></textarea>
                   <label className={person.story && "active"} htmlFor="story">About</label>
                 </div>
               </div>
