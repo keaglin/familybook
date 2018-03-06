@@ -1,7 +1,7 @@
 # Johnson and Jones Family Book  
-An application that aggregates and displays family and ancestry data.  
+### An application that aggregates and displays family and ancestry data.  
 
-_UPDATED TO AN API (Node server) AND A REACT APP (bootstrapped with create-react-app)_   
+_Updated and separated into an API (Node server) and a React app (bootstrapped with create-react-app)_   
 
 ## Project Status
 This project is still being actively developed. 
@@ -11,7 +11,7 @@ This project is still being actively developed.
 - User model and login functionality
 - User authorizations for add, update and delete methods
 
-#### Stack
+#### Tech Stack
 - React  
 - Node  
 - ExpressJS   
