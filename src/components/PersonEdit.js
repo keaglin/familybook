@@ -1,16 +1,13 @@
 import React, { Component } from 'react'
 import axios                from 'axios'
 import { CLIENT_URL }       from '../constants'
-// import '../css/ItemEdit.css'
-import { Redirect }           from 'react-router-dom'
-// import Col from 'react-materialize'
+import { Redirect }         from 'react-router-dom'
 
 class PersonEdit extends Component {
   state = {
     person: this.props.location.state.person,
     toDashboard: false
   }
-
   handleName = (e) => {
     if (e.target.value) this.setState({person: Object.assign(this.state.person, {name: e.target.value})})
   }
@@ -35,27 +32,6 @@ class PersonEdit extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    // This approach did not work. But why?
-    // const formData = new FormData(e.target)
-    // console.log(person)
-    // console.log(typeof(person.get('name')))
-    // axios({
-    //   method: 'put',
-    //   url: `${CLIENT_URL}/${this.state.person.name}`,
-    //   data: {
-    //     name: formData.get('name'),
-    //     birthDate: formData.get('birthDate'),
-    //     deathDate: formData.get('deathDate'),
-    //     spouse: formData.get('spouse'),
-    //     location: formData.get('location'),
-    //     occupation: formData.get('occupation'),
-    //     story: formData.get('story')
-    //   }
-    // })
-    //   .then(this.setState({ toDashboard: true }))
-    //   .catch(err => console.log('Woops!', err))
-
-
     axios.put(`${CLIENT_URL}/${this.state.person.name}`, {person: this.state.person})
       .then(this.setState({ toDashboard: true }))
       .catch(err => console.log('Woops!', err))
@@ -99,10 +75,8 @@ class PersonEdit extends Component {
                   <label className={person.location && "active"} htmlFor="location">Location</label>
                 </div>
                 <div className="input-field col s6">
-                {/* <Col class="input-field" s={6}> */}
                   <input id="occupation" name="occupation" type="text" defaultValue={person.occupation} onChange={this.handleOccupation} />
                   <label className={person.occupation && "active"} htmlFor="occupation">Occupation</label>
-                {/* </Col> */}
                 </div>
                 <div className="input-field col s12">
                   <textarea className="materialize-textarea" id="story" name="story" type="text" defaultValue={person.story} onChange={this.handleStory}></textarea>

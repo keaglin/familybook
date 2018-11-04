@@ -10,8 +10,8 @@ class PersonDetail extends Component {
   }
   handleDelete = () => {
     axios.delete(`${CLIENT_URL}/${this.state.person.name}`)
-    .then(this.setState({ toDashboard: true }))
-    .catch(err => console.log(err))
+      .then(this.setState({ toDashboard: true }))
+      .catch(err => console.log(err))
   }
   render() {
     let person = this.state.person
