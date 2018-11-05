@@ -4,12 +4,7 @@
 
 ## Project Status
 This project is still being actively developed. 
-- Add images
-- Form data verification
-- "Scroll through history" idea
-- Multiple views (scroll plus family tree or something)
-- User model and login functionality
-- User authorizations for add, update and delete methods
+
 
 #### Tech Stack
 - React  
@@ -51,6 +46,15 @@ You will need `npm`, `node` (and optionally `yarn`) installed globally on your m
 4. Visit App at `localhost:3000` 
 5. Build with `yarn build` (generates a static site in the `/build` folder in the project root)  
 6. Deploy `/build` with any tool or service that supports static sites
+
+
+### Feature Ideas
+- Add images
+- Form data verification
+- "Scroll through history" idea
+- Multiple views (scroll plus family tree or something)
+- User model and login functionality
+- User authorizations for add, update and delete methods
 
 <!-- ## Reflection
 
