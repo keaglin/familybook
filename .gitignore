@@ -62,3 +62,4 @@ typings/
 
 .git/
 .vscode/
+build/
