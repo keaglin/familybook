@@ -30,15 +30,16 @@ class PersonDetail extends Component {
             <h5>Essentials</h5>
             <p>Born: {person.birthDate}</p>
             <p>Died: {person.deathDate}</p>
-            <p>Spouse/Partner: {person.spouse}</p>
             <p>Location: {person.location}</p>
+            <p>Spouse/Partner: {person.spouse}</p>
             <p>Occupation: {person.occupation}</p>
           </div>
           <div className="col s6">
-            <h5>About</h5>
+            <h5>Lore</h5>
             <p>{person.story}</p>
           </div>
         </div>
+        {/* only wanna show this if the person is logged in and is admin */}
           <div className="row">
             <div className="col s4 center">
               <button className="btn white">

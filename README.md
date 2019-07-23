@@ -49,6 +49,7 @@ You will need `npm`, `node` (and optionally `yarn`) installed globally on your m
 
 
 ### Feature Ideas
+- Search
 - Add images
 - Form data verification
 - "Scroll through history" idea
