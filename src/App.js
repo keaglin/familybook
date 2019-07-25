@@ -13,8 +13,7 @@ class App extends Component {
   render() {
     return (
       <div className="app-container">
-        <Header />
-          <main>
+        {/* <Header /> */}
             <Switch>
               <Route exact path='/'            render={() => (<Index />)} />
               <Route exact path='/people'      render={(props) => (<PeopleContainer {...props}/>) } />
@@ -23,8 +22,7 @@ class App extends Component {
               <Route path='/people/:name'      render={(props) => (<PersonDetail {...props}/>)} />              
               <Route path='/*'                 render={() => (<Index />)} />
             </Switch>
-          </main>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     )
   }
