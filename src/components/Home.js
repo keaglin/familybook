@@ -21,14 +21,14 @@ class Home extends Component {
             <div className="columns">
               <div className="column is-6 is-offset-3">
                 <div className="field">
-                  <label className="label">Who, What, When, or Where?</label>
+                  <label className="label is-large has-text-centered">Who, What, When, or Where?</label>
                   <div className="control has-icons-left">
                     <input className="input is-rounded is-large" type="text" placeholder="Search" />
                       <span class="icon is-medium is-left">
                         <i class="fas fa-search"></i>
                       </span>
                   </div>
-                  <p className="help">Search Ideas: a significant year, the name of a person, or the name of a place</p>
+                  <p className="help has-text-centered">Hint: a significant year, the name of a person, or the name of a place</p>
                 </div>
                 <div className="field is-grouped is-grouped-centered">
                   <div className="control">
