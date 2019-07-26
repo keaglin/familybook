@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Header               from './components/Header'
 import Footer               from './components/Footer'
-import Index                from './components/Index'
+import Home                from './components/Home'
 import PeopleContainer      from './components/PeopleContainer'
 import PersonDetail         from './components/PersonDetail'
 import PersonEdit           from './components/PersonEdit'
@@ -15,12 +15,12 @@ class App extends Component {
       <div className="app-container">
         {/* <Header /> */}
             <Switch>
-              <Route exact path='/'            render={() => (<Index />)} />
+              <Route exact path='/'            render={() => (<Home />)} />
               <Route exact path='/people'      render={(props) => (<PeopleContainer {...props}/>) } />
               <Route exact path='/people/add'  render={(props) => (<PeopleAdd {...props}/>) } />
               <Route path='/people/:name/edit' render={(props) => (<PersonEdit {...props}/>)} />              
               <Route path='/people/:name'      render={(props) => (<PersonDetail {...props}/>)} />              
-              <Route path='/*'                 render={() => (<Index />)} />
+              <Route path='/*'                 render={() => (<Home />)} />
             </Switch>
         {/* <Footer /> */}
       </div>

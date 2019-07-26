@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom'
 const Header = () => {
   return  (
       <header>
-        <nav class="navbar" role="navigation" aria-label="main navigation">
-          <div class="navbar-brand">
+        <nav className="navbar" role="navigation" aria-label="main navigation">
+          <div className="navbar-brand">
             <div className="navbar-item">
               <Link to="/">Johnson &amp; Jones Family Book</Link>
             </div>
@@ -25,16 +25,6 @@ const Header = () => {
             </div>
           </div>
         </nav>
-        {/* <nav>
-          <div className="nav-wrapper teal lighten-1">
-            <Link to="/" className="brand-logo center">Johson &amp; Jones Family Book</Link>
-            <ul id="nav-mobile" className="left hide-on-med-and-down">
-              <li><Link to="/about">About</Link></li>
-              <li><Link to="/faq">FAQ</Link></li>
-              <li><Link to="/people">Browse</Link></li>
-            </ul>
-          </div>
-        </nav> */}
       </header>
   )
 }

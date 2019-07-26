@@ -1,0 +1,11 @@
+.hero {
+  background: url(../img/home-hero.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: lightgrey;
+}
+
+h1, h3, label, p {
+  color: rgb(218, 233, 200) !important;
+}
+

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { CLIENT_URL }       from '../constants'
 import { Link, Redirect }   from 'react-router-dom'
 import axios                from 'axios'
-import MainLayout from '../MainLayout'
+import MainLayout from './MainLayout'
 
 class PersonDetail extends Component {
   state = {
