@@ -12,7 +12,7 @@ const PeopleList = (props) => {
             return (<li key={index}>
               <Link to = {{
                 pathname: `/people/${person.name}`, 
-                state: {person:person}
+                state: {person}
               }}>
                 {person.name}
               </Link>
